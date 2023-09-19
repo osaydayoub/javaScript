@@ -20,3 +20,8 @@ function fun4(str){
         return "Weak";
     }
 }
+
+// let x="ossdfefeQs";
+// console.log(fun1(x));
+// console.log(fun2(x));
+// console.log(fun4(x));
