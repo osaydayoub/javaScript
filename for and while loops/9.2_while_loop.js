@@ -1,5 +1,4 @@
 let  randomInteger=Math.floor(Math.random() * 51);
-console.log('randomInteger=',randomInteger);
 
 let guessNumber=prompt('guess a number 0-50:');
 while(guessNumber!=randomInteger){
