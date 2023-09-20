@@ -17,10 +17,8 @@ function countLetters(array){
 }
 
 const entries = Object.entries(countLetters(array));
-entries
 let maxChar=entries[0][0];
 let max=entries[0][1];
-
 for(letter of entries){
     if(letter[1]>max){
         max=letter[1];
