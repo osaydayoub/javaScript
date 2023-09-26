@@ -26,7 +26,7 @@ res=firstWordUpperCase('hello world again',addStar);
 res
 
 
-//10.4
+//10.1.4
 function changeString(str,fun){
     return fun(str);
 }

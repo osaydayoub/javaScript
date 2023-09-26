@@ -50,10 +50,8 @@ const candyStore = {
 
 function buy(candyStore, id){
     let candy=getCandy(candyStore,id);
-    candy
     candyStore.cashRegister+=candy.price;
     candy.amount--;
-    candy
 }
 
     // let candiesArray=candyStore.candies;
