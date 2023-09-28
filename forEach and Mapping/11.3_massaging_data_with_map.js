@@ -94,4 +94,4 @@ function allFoods(array){
     return foods;
 }
 
-console.log(allFoods(data));
+//console.log(allFoods(data));
