@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.5_smiley</title>
+</head>
+
+<body>
+    <h2>How many smiles do you want to see?</h2>
+    <input type="text">
+    <button>submit</button>
+    <h2 id="output"></h2>
+    <p></p>
+
+    <script>
+        const input = document.querySelector("input");
+        const button = document.querySelector("button");
+        const output = document.querySelector('#output');
+        const p = document.querySelector('p')
+
+        button.addEventListener("click", function () {
+            let value = input.value;
+            p.innerText = "";
+            if (value.match(/^[0-9]+$/) != null) {
+                let number = parseInt(value);
+                output.innerText = "";
+                for (let i = 0; i < number; i++) {
+                    p.innerText += "😜";
+                }
+            } else {
+                output.innerText = "Please enter a number!";
+            }
+        });
+        
+    </script>
+</body>
+
+</html>
