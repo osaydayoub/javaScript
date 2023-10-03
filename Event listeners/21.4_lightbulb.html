@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.4_lightbulb</title>
+  </head>
+  <body>
+    <img id="lamp" src="./img/off.png" alt="lamp" />
+  </body>
+
+  <script>
+    let lamp = document.querySelector("#lamp");
+    let lampOn = false;
+
+    lamp.addEventListener("click", function () {
+      if (lampOn === false) {
+        lamp.src = "./img/on.png";
+        lampOn = true;
+      } else {
+        lamp.src = "./img/off.png";
+        lampOn = false;
+      }
+    });
+  </script>
+</html>
