@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21.2_font_size</title>
+</head>
+<style>
+body {
+  background-color: cornflowerblue;
+  text-align: center;
+}
+button{
+    font-size: 50px;
+    padding: 15px 32px;
+    text-align: center;
+}
+.minus{
+    padding: 15px 38px;
+}
+</style>
+<body>
+    <button class="plus">+</button>
+    <button class="minus">-</button>
+    <p class="text">Clicking the + button should increase the text’s font-size
+        and clicking the - should decrease it. Try it!</p>
+        <script>
+            const plus=document.querySelector('.plus');
+            const minus=document.querySelector('.minus');
+            const text=document.querySelector('.text')
+            let size=16;
+            plus.addEventListener('click',function(){
+                if(size===99){
+                    return;
+                }
+                size+=1;
+                text.style.fontSize = `${size}px`;
+                // console.log(`${size}px`);
+            })
+            minus.addEventListener('click',function(){
+                if(size===7){
+                    return;
+                }
+                size-=1;
+                text.style.fontSize = `${size}px`;
+                // console.log(`${size}px`);
+            })
+        </script>
+    
+</body>
+</html>
+<!-- Create a webpage that has some text and two buttons with ‘+’
+and ‘-‘ Clicking the ‘+’ button should increase the text’s font-size
+and clicking the ‘-‘ should decrease it.
+Limit the font size to be between 6px and 100px. -->
