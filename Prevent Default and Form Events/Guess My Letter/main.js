@@ -7,7 +7,6 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz";
 let gameON = true;
 let wrongGuessesArray = [];
 let randomLetter = getRandomLetter();
-console.log(randomLetter);
 
 window.addEventListener('keyup', function (event) {
     let key = event.key.toLocaleLowerCase();
@@ -25,7 +24,7 @@ yesButton.addEventListener('click', function () {
 })
 function getRandomLetter() {
     let optionsNumber = alphabet.length;
-    return alphabet.charAt(Math.floor(Math.random() * optionsNumber))
+    return alphabet.charAt(Math.floor(Math.random() * optionsNumber));
 }
 
 function rightGuess() {
