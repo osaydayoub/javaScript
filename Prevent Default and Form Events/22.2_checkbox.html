@@ -1,0 +1,42 @@
+<!-- Create a webpage that has a checkbox. If the checkbox is
+checked, make a photo appear. If it is not, make it disappear. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22.2_checkbox</title>
+</head>
+<style>
+    #photo-container {
+        padding: 30px;
+        display: none;
+    }
+
+    #photo {
+        height: 400px;
+        width: 400px;
+    }
+</style>
+<body>
+    <label for="photo-check">if you want to see a photo, check the box!</label>
+    <input type="checkbox" id="photo-check">
+    <div id="photo-container">
+        <img id="photo" src="./img/img1.jpg" alt="photo">
+    </div>
+    <script>
+        const checkboxInput=document.querySelector('#photo-check')
+        const photoContainer=document.querySelector('#photo-container')
+        checkboxInput.addEventListener('change',function(){
+            console.log(checkboxInput.checked);
+            if(checkboxInput.checked){
+                photoContainer.style.display = 'block';
+            }else{
+                photoContainer.style.display = 'none';
+            }   
+        })
+    </script>
+</body>
+
+</html>
