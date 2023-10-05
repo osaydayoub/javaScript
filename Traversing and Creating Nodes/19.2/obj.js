@@ -28,8 +28,6 @@ const users = [
     //ordered list
     const body=document.querySelector('body'); 
     const myNewOl = document.createElement('ol');
-    //let liText = document.createTextNode("sub title 4");
-    //myNewLi.appendChild(liText)
     body.appendChild(myNewOl);
     let newLi;
     let text='';
