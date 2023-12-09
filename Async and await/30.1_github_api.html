@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30.1_github_api</title>
+</head>
+<style>
+    .user-container {
+        /* height: 200px; */
+        width: 200px;
+        border: solid black 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image {
+        height: 150px;
+        width: 150px;
+    }
+</style>
+
+<body>
+    <input id="username" type="text">
+    <button id="search-btn">search</button>
+    <div id="users-container"></div>
+    <div id="error-message"></div>
+
+
+
+
+    <script>
+        const userInput = document.getElementById("username");
+        const usersContainer = document.getElementById("users-container");
+        document.getElementById("search-btn").addEventListener('click', addUser);
+
+        function addUser() {
+            const userName = userInput.value;
+            fetch(`https://api.github.com/users/${userName}`)
+                .then((user) => {
+                    if (user.ok) {
+                        return user.json();
+                    } else {
+                        throw new Error('user not found !');
+                    }
+                })
+                .then((data) => {
+                    const newUserElsement = document.createElement('div');
+                    newUserElsement.classList.add("user-container");
+                    newUserElsement.addEventListener('click', () => {
+                        document.location.href = data.html_url;
+                    })
+
+                    const newH2 = document.createElement('h2');
+                    newH2.textContent = data.name;
+
+                    const newImg = document.createElement('img');
+                    newImg.classList.add("image");
+                    newImg.setAttribute("src", data.avatar_url);
+
+                    const reposNumber = document.createElement('p');
+                    reposNumber.textContent = `Number of public repos:${data.public_repos}`;
+
+                    newUserElsement.appendChild(newH2);
+                    newUserElsement.appendChild(newImg);
+                    newUserElsement.appendChild(reposNumber);
+
+                    usersContainer.appendChild(newUserElsement);
+                    console.log(data);
+                })
+
+                .catch(error => {
+                    console.log("not found");
+                });
+        }
+
+    </script>
+</body>
+
+</html>
